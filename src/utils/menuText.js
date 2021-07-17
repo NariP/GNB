@@ -60,4 +60,30 @@ const bigMenu = [
 	'공공·복지',
 ];
 
-export { menus, bigMenu };
+const popUpMenu = [
+	'MY 원티드',
+	'프로필',
+	'지원현황',
+	'제안받기 현황',
+	'좋아요',
+	'북마크',
+	'추천',
+	'포인트',
+	'로그아웃',
+];
+
+const popUpMenuSmall = [
+	{ name: 'MY 원티드', isOuterLink: false },
+	{ name: '프로필', isOuterLink: false },
+	{ name: '이력서', isOuterLink: false },
+	{ name: '매치업', isOuterLink: false },
+	{ name: '추천', isOuterLink: false },
+	{ name: '지원 현황', isOuterLink: false },
+	{ name: '프리랜서', isOuterLink: true },
+	{ name: '직군별 연봉', isOuterLink: false },
+	{ name: '커리어 성장', isOuterLink: false },
+	{ name: '기업 서비스', isOuterLink: false },
+	{ name: '로그아웃', isOuterLink: false },
+];
+
+export { menus, bigMenu, popUpMenu, popUpMenuSmall };

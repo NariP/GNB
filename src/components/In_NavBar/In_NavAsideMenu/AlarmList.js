@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import AlarmBox from './AlarmBox';
+import AlarmListItem from './AlarmListItem';
 
 AlarmList.propTypes = {
 	isOuterLink: PropTypes.bool,
@@ -16,11 +16,13 @@ function AlarmList({ contents, date, isOuterLink }) {
 						target='_blank'
 						rel='noopener noreferrer'
 					>
-						<AlarmBox contents={contents} date={date} />
+						<AlarmListItem contents={contents} date={date} />
 						<div>svg(_right_arrow_>)</div>
 					</a>
 				)}
-				{!isOuterLink && <AlarmBox contents={contents} date={date} />}
+				{!isOuterLink && (
+					<AlarmListItem contents={contents} date={date} />
+				)}
 			</div>
 		</li>
 	);

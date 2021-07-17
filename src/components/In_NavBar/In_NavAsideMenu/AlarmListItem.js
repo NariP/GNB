@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-AlarmBox.propTypes = {
+AlarmListItem.propTypes = {
 	contents: PropTypes.string,
 	date: PropTypes.string,
 };
-function AlarmBox({ contents, date }) {
+function AlarmListItem({ contents, date }) {
 	return (
 		<div>
 			<p>공지</p>
@@ -21,5 +21,5 @@ function AlarmBox({ contents, date }) {
 	);
 }
 
-export default AlarmBox;
+export default AlarmListItem;
 // AlarmList 의 내부
