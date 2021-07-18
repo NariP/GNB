@@ -6,7 +6,11 @@ header {
   box-shadow: 0 1px 0 0 rgba(0, 0, 0, .1);
   z-index: 100;
 
-  div {
+  &.noBoxShadow {
+    box-shadow: none;
+  }
+
+  & > div {
     position: relative;
     max-width: 1060px;
     margin: 0 auto;
@@ -23,17 +27,17 @@ header {
 }
 
 @media only screen and (min-width: 1200px) {
-  .mediaDiv {
+  .mediaDiv, .container {
     width: 87.72%;
   }
 }
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
-  .mediaDiv {
+  .mediaDiv, .container {
     width: 90%;
   }
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
-  .mediaDiv {
+  .mediaDiv, .container {
     width: 90%;
   }
 }
@@ -49,6 +53,13 @@ header {
   .text-logo-container {
     display: none;
   }
+  .mainMenu li:hover:not(.selectedNav) {
+    box-shadow: none;
+  }
+  .mainMenu .selectedNav:hover {
+    box-shadow: inset 0 -2px #258bf7;
+  }
+
   // 홈 버튼
   .mainMenu li:first-child {
     display: block;
@@ -73,5 +84,9 @@ header {
   // 기업 서비스 버튼
   .navAsideMenu .leftDivision {
     display: none;
+  }
+
+  .dropDownMenu {
+    display: none !important;
   }
 }

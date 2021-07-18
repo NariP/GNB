@@ -1,4 +1,5 @@
 import React from 'react';
+import { IoIosArrowForward } from 'react-icons/io';
 import PropTypes from 'prop-types';
 
 BigMenuBody.propTypes = {
@@ -9,7 +10,9 @@ function BigMenuBody({ ele }) {
 		<a href='/'>
 			<h2>
 				{ele}
-				<i>icon(_arrow_right_>)</i>
+				<i>
+					<IoIosArrowForward />
+				</i>
 			</h2>
 		</a>
 	);

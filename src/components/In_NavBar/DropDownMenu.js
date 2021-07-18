@@ -1,17 +1,31 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { OneMenu, OneBigMenu } from './In_DropDownMenu';
 import { menus, bigMenu } from '../../utils/menuText';
+import '../../style/DropDownMenu.scss';
 
-function DropDownMenu(props) {
+DropDownMenu.prototype = {
+	isHover: PropTypes.bool.isRequired,
+	showDropDownMenu: PropTypes.func, // () => void
+	hideDropDownMenu: PropTypes.func, // () => void
+};
+function DropDownMenu({ isHover, showDropDownMenu, hideDropDownMenu }) {
 	const oneMenu = menus.map((menu, idx) => (
 		<OneMenu key={idx.toString()} menu={menu} />
 	));
+
 	return (
-		<div style={{ display: 'none' }}>
-			<div className='container'>
-				<div className='row'>
-					{oneMenu}
-					<OneBigMenu bigMenu={bigMenu} />
+		<div className={`dropDownMenu ${isHover && 'showMenu'}`}>
+			<div
+				className='overlay'
+				onMouseOver={showDropDownMenu}
+				onMouseLeave={hideDropDownMenu}
+			>
+				<div className='container'>
+					<div className='row'>
+						{oneMenu}
+						<OneBigMenu bigMenu={bigMenu} />
+					</div>
 				</div>
 			</div>
 		</div>

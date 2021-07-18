@@ -1,4 +1,5 @@
 import React from 'react';
+import { IoIosArrowForward } from 'react-icons/io';
 import PropTypes from 'prop-types';
 import MenuBody from './MenuBody';
 
@@ -14,7 +15,10 @@ function OneMenu({ menu }) {
 			))}
 			<a href='/'>
 				<h3>
-					더보기<i>icon(_arrow_right_>)</i>
+					더보기
+					<i>
+						<IoIosArrowForward />
+					</i>
 				</h3>
 			</a>
 		</div>
