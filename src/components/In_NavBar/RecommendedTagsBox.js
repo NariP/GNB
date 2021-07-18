@@ -2,7 +2,7 @@ import React from 'react';
 
 function RecommendedTagsBox(props) {
 	return (
-		<div>
+		<div style={{ display: 'none' }}>
 			<div className='container' role='presentation'>
 				<h4>추천태그로 검색해보세요</h4>
 				<a href='/'>기업태그 홈 이동하기 svg(_right_arrow_>)</a>

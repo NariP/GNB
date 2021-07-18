@@ -3,7 +3,7 @@ import '../../style/TexLogo.scss';
 
 function TextLogo(props) {
 	return (
-		<div className='flexBox'>
+		<div className='text-logo-container'>
 			<a href='/' rel='home'>
 				<i className='text-logo' />
 			</a>

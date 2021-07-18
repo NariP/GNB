@@ -4,7 +4,7 @@ import { alarms } from '../../../utils/apiText';
 
 function AlarmPopUp(props) {
 	return (
-		<div>
+		<div style={{ display: 'none' }}>
 			<div>
 				<ul>
 					{alarms.map(({ id, contents, date, isOuterLink }) => (

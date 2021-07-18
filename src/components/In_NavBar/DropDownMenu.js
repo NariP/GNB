@@ -7,7 +7,7 @@ function DropDownMenu(props) {
 		<OneMenu key={idx.toString()} menu={menu} />
 	));
 	return (
-		<div>
+		<div style={{ display: 'none' }}>
 			<div className='container'>
 				<div className='row'>
 					{oneMenu}

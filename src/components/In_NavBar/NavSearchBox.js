@@ -2,7 +2,7 @@ import React from 'react';
 
 function NavSearchBox(props) {
 	return (
-		<div>
+		<div style={{ display: 'none' }}>
 			<div>
 				<form role='presentation' action='.'>
 					<input

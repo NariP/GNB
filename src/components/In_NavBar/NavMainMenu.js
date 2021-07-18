@@ -1,14 +1,15 @@
 import React from 'react';
+import '../../style/NavMainMenu.scss';
 
 function NavMainMenu(props) {
 	return (
-		<ul>
+		<ul className='mainMenu'>
 			<li>
 				<a href='/' rel='home'>
 					홈
 				</a>
 			</li>
-			<li>
+			<li className='selectedNav'>
 				<a href='/'>탐색</a>
 			</li>
 			<li>
@@ -30,7 +31,7 @@ function NavMainMenu(props) {
 			</li>
 			<li>
 				<a href='/'>
-					Ai 합격예측 <span>svg(_Beta)</span>
+					Ai 합격예측 <span>Beta</span>
 				</a>
 			</li>
 		</ul>

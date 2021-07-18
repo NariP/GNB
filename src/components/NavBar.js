@@ -7,6 +7,7 @@ import {
 	RecommendedTagsBox,
 	TextLogo,
 } from './In_NavBar';
+import '../style/NavBar.scss';
 
 function NavBar(props) {
 	return (
@@ -30,3 +31,4 @@ function NavBar(props) {
 }
 
 export default NavBar;
+// GNB

@@ -5,7 +5,7 @@ import { popUpMenu, popUpMenuSmall } from '../../../utils/menuText';
 
 function ProfilePopUp(props) {
 	return (
-		<div>
+		<div style={{ display: 'none' }}>
 			<div>
 				<div>icon(_wanted_symbol)</div>
 				<ProfilePopUpList popUpMenu={popUpMenu} />

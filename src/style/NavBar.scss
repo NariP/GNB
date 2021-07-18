@@ -1,0 +1,77 @@
+header {
+  position: fixed;
+  background: #fff;
+  width: 100%;
+  height: 50px;
+  box-shadow: 0 1px 0 0 rgba(0, 0, 0, .1);
+  z-index: 100;
+
+  div {
+    position: relative;
+    max-width: 1060px;
+    margin: 0 auto;
+    height: inherit;
+
+    nav {
+      display: flex;
+      flex-flow: row wrap;
+      align-items: center;
+      justify-content: space-between;
+      height: inherit;
+    }
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .mediaDiv {
+    width: 87.72%;
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .mediaDiv {
+    width: 90%;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .mediaDiv {
+    width: 90%;
+  }
+}
+// appBar
+@media only screen and (max-width: 767px) {
+  header {
+    height: 57px;
+  }
+  .mediaDiv {
+    height: 57px;
+  }
+  // 원티드 text logo
+  .text-logo-container {
+    display: none;
+  }
+  // 홈 버튼
+  .mainMenu li:first-child {
+    display: block;
+    padding: 14px 13px 0 20px;
+  }
+  // 직군별 연봉 ~ AI 합격 예측 버튼
+  .mainMenu li:nth-child(n+4):nth-child(-n+8) {
+    display: none;
+  }
+  // 알람 버튼
+  .navAsideMenu .alarmIcon {
+    margin-right: 0 !important;
+  }
+  // 햄버거 메뉴 버튼
+  .navAsideMenu li:last-child {
+    display: inline-block;
+  }
+  // 프로필 버튼
+  .navAsideMenu .profileBox {
+    display: none !important;
+  }
+  // 기업 서비스 버튼
+  .navAsideMenu .leftDivision {
+    display: none;
+  }
+}
