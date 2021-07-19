@@ -1,0 +1,98 @@
+@import 'colors';
+@mixin hoverBlackTrans ($color) {
+  background: $color;
+
+  &:hover {
+    background: mix($color, #000, 95%)
+  }
+}
+.recommendedTagsBox {
+  position: fixed;
+  left: 0;
+  right: 0;
+  background: #fff;
+
+  .container {
+    position: relative;
+    margin: 0 auto;
+    padding: 48px 0 0;
+    max-width: 1060px;
+  }
+
+  h4 {
+    display: inline-block;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 600;
+    color: $normal-text-black;
+  }
+
+    a {
+      position: relative;
+      top: 2px;
+      left: 2px;
+      float: right;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 20px;
+      color: #767676;
+
+      & svg {
+        position: relative;
+        top: 1px;
+        margin-left: 3px;
+      }
+  }
+
+  .smallCompanyTag {
+    display: none;
+  }
+
+  ul {
+    padding: 20px 0 52px;
+    overflow-x: auto;
+
+    li {
+      float: left;
+      width: auto;
+      position: relative;
+      display: block;
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 35px;
+      color: $normal-text-black;
+
+      &:nth-child(1) button {
+        @include hoverBlackTrans(#f0f8f8);
+      }
+      &:nth-child(2) button {
+        @include hoverBlackTrans(#eeedf4);
+      }
+      &:nth-child(3) button {
+        @include hoverBlackTrans(#e8edf3);
+      }
+      &:nth-child(4) button {
+        @include hoverBlackTrans(#e9f4fb);
+      }
+      &:nth-child(5) button {
+        @include hoverBlackTrans(#effbf3);
+      }
+
+      &:nth-child(n+2):nth-child(-n+5) {
+        margin-left: 10px;
+      }
+    }
+
+    li button {
+      margin-bottom: 0;
+      display: inline-block;
+      height: 50px;
+      line-height: 50px;
+      font-size: 15px;
+      font-weight: inherit;
+      color: inherit;
+      padding: 0 26px;
+      border-radius: 25px;
+    }
+  }
+}

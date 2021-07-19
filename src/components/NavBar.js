@@ -4,24 +4,35 @@ import {
 	NavAsideMenu,
 	NavMainMenu,
 	NavSearchBox,
-	RecommendedTagsBox,
 	TextLogo,
 } from './In_NavBar';
 import '../style/NavBar.scss';
 
 function NavBar(props) {
 	const [isHover, setIsHover] = useState(false);
+	const [searchBoxState, setSearchBoxState] = useState(false);
 	const showDropDownMenu = () => {
 		setIsHover(true);
 	};
 	const hideDropDownMenu = () => {
 		setIsHover(false);
 	};
+	const showSearchBox = () => {
+		setSearchBoxState(true);
+	};
+	const hideSearchBox = () => {
+		setSearchBoxState(false);
+	};
+	const onClickHandler = (e) => {
+		hideDropDownMenu();
+		searchBoxState && e.target.name !== 'searchInput' && hideSearchBox();
+	};
+
 	return (
 		<header
 			className={`${isHover && 'noBoxShadow'}`}
 			role='presentation'
-			onClick={hideDropDownMenu}
+			onClick={(e) => onClickHandler(e)}
 		>
 			<div className='mediaDiv' role='presentation'>
 				<nav>
@@ -37,13 +48,11 @@ function NavBar(props) {
 						showDropDownMenu={showDropDownMenu}
 						hideDropDownMenu={hideDropDownMenu}
 					/>
-					<NavAsideMenu />
+					<NavAsideMenu showSearchBox={showSearchBox} />
 				</nav>
 			</div>
 			{/*검색창*/}
-			<NavSearchBox />
-			{/*검색창 하단*/}
-			<RecommendedTagsBox />
+			{searchBoxState && <NavSearchBox hideSearchBox={hideSearchBox} />}
 		</header>
 	);
 }

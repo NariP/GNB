@@ -1,16 +1,24 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import '../../style/NavAsideMenu.scss';
 import { HiOutlineSearch, HiOutlineMenu } from 'react-icons/hi';
 import { VscBell } from 'react-icons/vsc';
 import { AlarmPopUp, ProfilePopUp } from './In_NavAsideMenu';
 
-function NavAsideMenu(props) {
+NavAsideMenu.prototype = {
+	showSearchBox: PropTypes.func, // () => void
+};
+
+function NavAsideMenu({ showSearchBox }) {
 	return (
 		<aside>
 			<ul className='navAsideMenu'>
 				<li className='iconBtn'>
 					<button>
-						<HiOutlineSearch className='searchIcon' />
+						<HiOutlineSearch
+							className='searchIcon'
+							onClick={showSearchBox}
+						/>
 					</button>
 				</li>
 				<li className='iconBtn'>

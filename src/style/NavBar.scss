@@ -10,7 +10,7 @@ header {
     box-shadow: none;
   }
 
-  & > div {
+  & > div:first-child {
     position: relative;
     max-width: 1060px;
     margin: 0 auto;
@@ -27,17 +27,17 @@ header {
 }
 
 @media only screen and (min-width: 1200px) {
-  .mediaDiv, .container {
+  .mediaDiv, .container, .recommendedTagsBox .container {
     width: 87.72%;
   }
 }
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
-  .mediaDiv, .container {
+  .mediaDiv, .container, .navSearchBox > div ,.recommendedTagsBox .container {
     width: 90%;
   }
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
-  .mediaDiv, .container {
+  .mediaDiv, .container, .navSearchBox > div, .recommendedTagsBox .container {
     width: 90%;
   }
 }
@@ -88,5 +88,47 @@ header {
 
   .dropDownMenu {
     display: none !important;
+  }
+
+  .navSearchBox > div {
+    width: 100%;
+    padding: 20px
+  }
+  .navSearchBox form button {
+    display: block !important;
+  }
+  .recommendedTagsBox {
+    height: calc(100% - 50px);
+    background: #fff;
+    overflow-y: auto;
+  }
+  .recommendedTagsBox .container {
+    padding: 38px 20px 20px;
+
+    // 기업 태그 홈
+   .bigCompanyTag {
+     display: none;
+    }
+    .smallCompanyTag {
+      display: block;
+    }
+
+  }
+  .recommendedTagsBox .container ul {
+    padding: 20px 0 40px;
+    & li {
+      font-size: 16px;
+      margin-bottom: 0;
+    }
+    & li:nth-child(n+2):nth-child(-n+5) {
+    margin-left: 0;
+  }
+    & li button {
+      margin: 5px 4px 0 0;
+      font-size: 13px;
+      padding: 0 12px;
+      height: 34px;
+      line-height: 34px;
+    }
   }
 }

@@ -4,6 +4,10 @@
   font-weight: normal;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -37,9 +41,10 @@ button {
   cursor: pointer;
 }
 
-input {
+input, input:focus {
   border: none;
   outline-style: none;
+  box-shadow: none;
 }
 
 ul {
@@ -62,4 +67,10 @@ h3 {
 
 h4 {
   @include reset_h();
+}
+
+form {
+  margin: 0;
+  padding: 0;
+  border: 0;
 }
