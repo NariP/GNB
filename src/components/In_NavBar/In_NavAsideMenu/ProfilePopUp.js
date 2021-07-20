@@ -1,8 +1,7 @@
 import React from 'react';
 import '../../../style/ProfilePopUp.scss';
 import ProfilePopUpList from './ProfilePopUpList';
-import ProfilePopUpListSmall from './ProfilePopUpListSmall';
-import { popUpMenu, popUpMenuSmall } from '../../../utils/menuText';
+import { popUpMenu } from '../../../utils/menuText';
 
 function ProfilePopUp(props) {
 	return (

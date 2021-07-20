@@ -51,6 +51,34 @@ header {
     display: none;
   }
 }
+@media only screen and (min-width: 995px) and (max-width: 1045px) {
+  .mediaDiv .mainMenu {
+    display: flex;
+    justify-content: space-between;
+    width: 60%;
+    li {
+      padding-left: 0!important;
+      padding-right: 0!important;
+    }
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 994px) {
+  .mediaDiv {
+    width: 96%;
+  }
+  .mediaDiv .mainMenu {
+    display: flex;
+    flex: 1 0;
+    justify-content: space-between;
+    width: 55%;
+    padding-left: 4px;
+    li {
+      padding-left: 0!important;
+      padding-right: 0!important;
+      font-size: 9px;
+    }
+  }
+}
 // appBar
 @media only screen and (max-width: 767px) {
   header {
