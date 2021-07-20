@@ -1,17 +1,28 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import '../../style/NavAsideMenu.scss';
 import { HiOutlineSearch, HiOutlineMenu } from 'react-icons/hi';
 import { VscBell } from 'react-icons/vsc';
 import { AlarmPopUp, ProfilePopUp } from './In_NavAsideMenu';
+import ProfilePopUpSmall from './In_NavAsideMenu/ProfilePopUpSmall';
 
 NavAsideMenu.prototype = {
-	showSearchBox: PropTypes.func, // () => void
 	alarmPopUpState: PropTypes.bool,
+	profilePopUpState: PropTypes.bool,
+	showSearchBox: PropTypes.func, // () => void
 	setAlarmPopUpState: PropTypes.func, // () => void
+	setProfilePopUpState: PropTypes.func, // () => void
+	showProfilePopUp: PropTypes.func, // () => void
 };
 
-function NavAsideMenu({ alarmPopUpState, showSearchBox, setAlarmPopUpState }) {
+function NavAsideMenu({
+	alarmPopUpState,
+	profilePopUpState,
+	showSearchBox,
+	setAlarmPopUpState,
+	setProfilePopUpState,
+	showProfilePopUp,
+}) {
 	return (
 		<aside>
 			<ul className='navAsideMenu'>
@@ -39,15 +50,24 @@ function NavAsideMenu({ alarmPopUpState, showSearchBox, setAlarmPopUpState }) {
 				<li className='profileBox'>
 					<button
 						type='button'
-						className='profileButton'
+						className='profileBtn'
 						aria-label='avatar-button'
+						onClick={() =>
+							setProfilePopUpState(
+								(profilePopUpState) => !profilePopUpState,
+							)
+						}
 					>
-						<div className='avatarBorder showMenuPopover'>
+						<div
+							className={`avatarBorder ${
+								profilePopUpState && 'showMenuPopover'
+							}`}
+						>
 							<div className='avatarImage' />
 						</div>
 					</button>
 					<span className='newBadge'>N</span>
-					<ProfilePopUp />
+					{profilePopUpState && <ProfilePopUp />}
 				</li>
 				<li className='leftDivision'>
 					<a className='dashboardButton' href='/'>
@@ -55,12 +75,20 @@ function NavAsideMenu({ alarmPopUpState, showSearchBox, setAlarmPopUpState }) {
 					</a>
 				</li>
 				{/*화면 작아졌을 때만 나오는 햄버거 메뉴*/}
-				<li>
-					<button type='button'>
-						<HiOutlineMenu className='menuIcon' />
+				<li data-group='profileGroup'>
+					<button
+						type='button'
+						data-group='profileGroup'
+						onClick={showProfilePopUp}
+					>
+						<HiOutlineMenu
+							className='menuIcon'
+							data-group='profileGroup'
+						/>
 					</button>
 				</li>
 			</ul>
+			{profilePopUpState && <ProfilePopUpSmall />}
 		</aside>
 	);
 }

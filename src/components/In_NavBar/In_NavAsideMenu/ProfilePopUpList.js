@@ -7,7 +7,7 @@ ProfilePopUpList.prototype = {
 };
 function ProfilePopUpList({ popUpMenu }) {
 	return (
-		<ul>
+		<ul className='ProfilePopUpList' data-group='profileGroup'>
 			{popUpMenu.map((ele, idx) => (
 				<ProfilePopUpListItem
 					key={idx.toString()}

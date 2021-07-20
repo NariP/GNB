@@ -6,9 +6,15 @@ NavMainMenu.propTypes = {
 	showDropDownMenu: PropTypes.func, // () => void
 	hideDropDownMenu: PropTypes.func, // () => void
 	hideAlarmPopUp: PropTypes.func, // () => void
+	hideProfilePopUp: PropTypes.func, // () => void
 };
 
-function NavMainMenu({ showDropDownMenu, hideDropDownMenu, hideAlarmPopUp }) {
+function NavMainMenu({
+	showDropDownMenu,
+	hideDropDownMenu,
+	hideAlarmPopUp,
+	hideProfilePopUp,
+}) {
 	return (
 		<ul className='mainMenu'>
 			<li>
@@ -21,6 +27,7 @@ function NavMainMenu({ showDropDownMenu, hideDropDownMenu, hideAlarmPopUp }) {
 				onMouseOver={() => {
 					showDropDownMenu();
 					hideAlarmPopUp();
+					hideProfilePopUp();
 				}}
 			>
 				<a href='/'>탐색</a>

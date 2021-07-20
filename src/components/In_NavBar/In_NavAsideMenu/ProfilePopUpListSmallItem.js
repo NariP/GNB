@@ -9,23 +9,23 @@ ProfilePopUpListSmallItem.prototype = {
 };
 function ProfilePopUpListSmallItem({ name, idx, length, isOuterLink }) {
 	return (
-		<li>
+		<li data-group='profileGroup'>
 			<a
 				href='/'
 				className={`${idx === length && 'is-logout'}`}
 				target={`${isOuterLink ? '_blank' : '_self'}`}
 				rel={`${isOuterLink && 'noopener noreferrer'}`}
+				data-group='profileGroup'
 			>
 				{idx === 0 && (
 					<>
-						<span>{name}</span>
-						<div className='profilePic'>
-							img(_bg)
-							<span>svg(_N)</span>
+						<span data-group='profileGroup'>{name}</span>
+						<div className='profilePic' data-group='profileGroup'>
+							<span data-group='profileGroup'>N</span>
 						</div>
 					</>
 				)}
-				{idx !== 0 && <span>{name}</span>}
+				{idx !== 0 && <span data-group='profileGroup'>{name}</span>}
 			</a>
 		</li>
 	);

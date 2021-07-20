@@ -1,17 +1,23 @@
 import React from 'react';
+import '../../../style/ProfilePopUp.scss';
 import ProfilePopUpList from './ProfilePopUpList';
 import ProfilePopUpListSmall from './ProfilePopUpListSmall';
 import { popUpMenu, popUpMenuSmall } from '../../../utils/menuText';
 
 function ProfilePopUp(props) {
 	return (
-		<div style={{ display: 'none' }}>
-			<div>
-				<div>icon(_wanted_symbol)</div>
+		<div className='profilePopUp' data-group='profileGroup'>
+			<div data-group='profileGroup'>
+				<div className='popUpFirstRow' data-group='profileGroup'>
+					<i className='wantedSymbol' data-group='profileGroup'>
+						symbol
+					</i>
+					<button type='button'>X</button>
+				</div>
 				<ProfilePopUpList popUpMenu={popUpMenu} />
-				{/*화면 작아졌을 때 나타나는 프로필 팝업*/}
-				<ProfilePopUpListSmall popUpMenuSmall={popUpMenuSmall} />
 			</div>
+			{/* 말풍선 꼬리 */}
+			<div className='bubbleTail' data-group='profileGroup'></div>
 		</div>
 	);
 }

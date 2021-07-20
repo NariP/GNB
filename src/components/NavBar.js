@@ -12,6 +12,7 @@ function NavBar(props) {
 	const [isHover, setIsHover] = useState(false);
 	const [searchBoxState, setSearchBoxState] = useState(false);
 	const [alarmPopUpState, setAlarmPopUpState] = useState(false);
+	const [profilePopUpState, setProfilePopUpState] = useState(false);
 	// dropDownMenu
 	const showDropDownMenu = () => {
 		setIsHover(true);
@@ -33,12 +34,24 @@ function NavBar(props) {
 		setAlarmPopUpState(false);
 	};
 
+	// profilePopUp
+	const showProfilePopUp = () => {
+		setProfilePopUpState(true);
+	};
+	const hideProfilePopUp = () => {
+		setProfilePopUpState(false);
+	};
+
 	const onClickHandler = (e) => {
 		hideDropDownMenu();
 		searchBoxState && e.target.name !== 'searchInput' && hideSearchBox();
 		alarmPopUpState &&
 			e.target.dataset.group !== 'notiGroup' &&
 			hideAlarmPopUp();
+		profilePopUpState &&
+			e.target.dataset.group !== 'profileGroup' &&
+			hideProfilePopUp();
+		console.log(e.target.dataset.group);
 	};
 
 	return (
@@ -55,6 +68,7 @@ function NavBar(props) {
 						showDropDownMenu={showDropDownMenu}
 						hideDropDownMenu={hideDropDownMenu}
 						hideAlarmPopUp={hideAlarmPopUp}
+						hideProfilePopUp={hideProfilePopUp}
 					/>
 					{/*드롭다운 메뉴*/}
 					<DropDownMenu
@@ -64,8 +78,11 @@ function NavBar(props) {
 					/>
 					<NavAsideMenu
 						alarmPopUpState={alarmPopUpState}
+						profilePopUpState={profilePopUpState}
 						showSearchBox={showSearchBox}
 						setAlarmPopUpState={setAlarmPopUpState}
+						setProfilePopUpState={setProfilePopUpState}
+						showProfilePopUp={showProfilePopUp}
 					/>
 				</nav>
 			</div>

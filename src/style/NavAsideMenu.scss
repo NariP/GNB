@@ -76,7 +76,7 @@
 }
 
 // 프로필 버튼
-.profileButton {
+.profileBtn {
   display: flex;
   height: 32px;
   align-items: center;
@@ -102,6 +102,10 @@
       background: url(../images/profileImg.jpg) no-repeat 50%;
       background-size: cover;
     }
+  }
+
+  .avatarBorder.showMenuPopover {
+    border: 1px solid $point-blue;
   }
 }
 

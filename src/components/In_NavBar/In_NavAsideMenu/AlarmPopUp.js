@@ -21,7 +21,7 @@ function AlarmPopUp(props) {
 					<div data-group='notiGroup' style={{ display: 'none' }}>
 						일시적으로 알림을 불러올 수 없습니다.
 					</div>
-					{/*말풍선 뾰족한 부분*/}
+					{/*말풍선 꼬리*/}
 					<div className='bubbleTail' data-group='notiGroup'>
 						{' '}
 					</div>

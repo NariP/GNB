@@ -7,7 +7,7 @@ ProfilePopUpListSmall.prototype = {
 };
 function ProfilePopUpListSmall({ popUpMenuSmall }) {
 	return (
-		<ul>
+		<ul className='profilePopUpListSmall' data-group='profileGroup'>
 			{popUpMenuSmall.map(({ name, isOuterLink }, idx) => (
 				<ProfilePopUpListSmallItem
 					key={idx.toString()}

@@ -1,3 +1,4 @@
+@import '_colors.scss';
 header {
   position: fixed;
   background: #fff;
@@ -30,15 +31,24 @@ header {
   .mediaDiv, .container, .recommendedTagsBox .container {
     width: 87.72%;
   }
+  .profilePopUpSmall {
+    display: none;
+  }
 }
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
   .mediaDiv, .container, .navSearchBox > div ,.recommendedTagsBox .container {
     width: 90%;
   }
+  .profilePopUpSmall {
+    display: none;
+  }
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .mediaDiv, .container, .navSearchBox > div, .recommendedTagsBox .container {
     width: 90%;
+  }
+  .profilePopUpSmall {
+    display: none;
   }
 }
 // appBar
@@ -169,6 +179,144 @@ header {
 
     .bubbleTail {
       display: none;
+    }
+  }
+
+  .profilePopUp .popUpFirstRow {
+    display: block;
+  }
+
+  .ProfilePopUpList {
+    display: none;
+  }
+
+  .profilePopUpSmall {
+    display: block;
+    background: #ffffff;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin-top: 0;
+    transform: none;
+
+    padding: 0 !important;
+
+    & > div {
+      box-shadow: none;
+      border: 1px solid #e1e2e3;
+      border-radius: 0;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      overflow-x: hidden;
+      overflow-y: auto;
+      padding: 20px;
+    }
+
+    .popUpFirstRow {
+      height: 50px;
+      width: 100%;
+      i {
+        display: inline-block;
+        position: relative;
+        top: -4px;
+        width: 61px;
+        height: 31px;
+        background: url("../images/logo_wanted_symbol.png") no-repeat center;
+        background-size: contain;
+        line-height: 1;
+        padding: 0;
+        margin: 13px 0;
+      }
+      button {
+        position: relative;
+        top: -4px;
+        left: 7px;
+        float: right;
+        background: none;
+        color: $menu-light-gray;
+
+        svg {
+          font-size: 36px;
+          line-height: 1;
+          margin: 12px 0;
+        }
+      }
+    }
+
+    .profilePopUpListSmall {
+      margin: 45px 0 15px;
+
+      li {
+        width: 100%;
+        height: auto;
+        color: $normal-text-black;
+      }
+      li a {
+        padding: 15px 0;
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 1;
+        position: relative;
+        display: block;
+        width: 100%;
+      }
+      li:first-child a > span {
+        position: relative;
+        &::after {
+          content: "";
+          position: absolute;
+          display: inline-block;
+          width: 5px;
+          height: 5px;
+          border-radius: 50%;
+          background: $point-blue;
+          top: 4px;
+          right: -10px;
+        }
+      }
+      .profilePic {
+        background: url('../images/profileImg.jpg') no-repeat 50%;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        border-radius: 50%;
+        background-size: cover;
+
+        border: 1px solid #fff;
+        box-shadow: 0 0 0 1px $point-blue;
+        width: 42px!important;
+        height: 42px!important;
+
+        span {
+          position: absolute;
+          width: 16px;
+          height: 16px;
+          top: -5px;
+          right: -6px;
+          display: inline-flex;
+          background: $point-blue;
+          -webkit-box-align: center;
+          align-items: center;
+          -webkit-box-pack: center;
+          border-radius: 5px;
+          color: #fff;
+          font-size: 6px;
+          padding-left: 4px;
+        }
+      }
+
+      li:nth-child(3), li:nth-child(8), li:nth-child(10) {
+        padding-top: 15px;
+        border-top: 1px solid #eee;
+        margin-top: 15px;
+      }
+      li:last-child a {
+        color: $menu-light-gray;
+      }
     }
   }
 }

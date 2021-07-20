@@ -49,7 +49,7 @@
       white-space: nowrap;
 
       &:focus {
-        border: 1px solid #36f;
+        border: 1px solid $point-blue;
         color: $normal-text-black;
         background: #ffffff;
       }

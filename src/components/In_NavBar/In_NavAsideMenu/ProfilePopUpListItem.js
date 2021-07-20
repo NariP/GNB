@@ -8,8 +8,12 @@ ProfilePopUpListItem.prototype = {
 };
 function ProfilePopUpListItem({ ele, idx, length }) {
 	return (
-		<li>
-			<a href='/' className={`flexBox ${idx === length && 'is-logout'}`}>
+		<li data-group='profileGroup'>
+			<a
+				href='/'
+				className={`flexBox ${idx === length && 'is-logout'}`}
+				data-group='profileGroup'
+			>
 				<span>{ele}</span>
 			</a>
 		</li>
