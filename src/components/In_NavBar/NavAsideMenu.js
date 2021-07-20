@@ -75,9 +75,10 @@ function NavAsideMenu({
 					</a>
 				</li>
 				{/*화면 작아졌을 때만 나오는 햄버거 메뉴*/}
-				<li data-group='profileGroup'>
+				<li className='iconBtn' data-group='profileGroup'>
 					<button
 						type='button'
+						className='menuBtn'
 						data-group='profileGroup'
 						onClick={showProfilePopUp}
 					>

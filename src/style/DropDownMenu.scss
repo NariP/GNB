@@ -86,7 +86,8 @@
     padding-bottom: 15px;
 
     i {
-      top: 1px;
+      top: 4px;
+      right: -1px;
     }
   }
 
@@ -95,5 +96,10 @@
     font-size: 13px;
     color: $menu-light-gray;
     padding: 5px 20px 5px 0;
+
+    i {
+      top: 4px;
+      right: -1px;
+    }
   }
 }

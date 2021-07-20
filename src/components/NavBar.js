@@ -55,11 +55,7 @@ function NavBar(props) {
 	};
 
 	return (
-		<header
-			className={`${isHover && 'noBoxShadow'}`}
-			role='presentation'
-			onClick={(e) => onClickHandler(e)}
-		>
+		<header role='presentation' onClick={(e) => onClickHandler(e)}>
 			<div className='mediaDiv' role='presentation'>
 				<nav>
 					{/*메뉴들*/}
