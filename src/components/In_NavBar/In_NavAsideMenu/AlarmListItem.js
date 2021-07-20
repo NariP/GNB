@@ -7,16 +7,24 @@ AlarmListItem.propTypes = {
 };
 function AlarmListItem({ contents, date }) {
 	return (
-		<div>
-			<p>공지</p>
-			<p>
+		<div data-group='notiGroup'>
+			<p className='noti' data-group='notiGroup'>
+				공지
+			</p>
+			<p className='notiStory' data-group='notiGroup'>
 				{contents.split('<br />').map((ele, idx) => (
-					<span key={idx.toString()} style={{ display: 'block' }}>
+					<span
+						key={idx.toString()}
+						style={{ display: 'block' }}
+						data-group='notiGroup'
+					>
 						{ele}
 					</span>
 				))}
 			</p>
-			<p>{date}</p>
+			<p className='notiDate' data-group='notiGroup'>
+				{date}
+			</p>
 		</div>
 	);
 }

@@ -7,7 +7,7 @@ function App() {
 			<NavBar />
 			<main>
 				<span>main</span>
-				<div style={{ height: 1800, background: 'white' }}>ss</div>
+				<div style={{ height: 1800, background: 'aliceblue' }}>ss</div>
 			</main>
 		</div>
 	);

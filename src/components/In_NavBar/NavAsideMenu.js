@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import '../../style/NavAsideMenu.scss';
 import { HiOutlineSearch, HiOutlineMenu } from 'react-icons/hi';
@@ -7,9 +7,11 @@ import { AlarmPopUp, ProfilePopUp } from './In_NavAsideMenu';
 
 NavAsideMenu.prototype = {
 	showSearchBox: PropTypes.func, // () => void
+	alarmPopUpState: PropTypes.bool,
+	setAlarmPopUpState: PropTypes.func, // () => void
 };
 
-function NavAsideMenu({ showSearchBox }) {
+function NavAsideMenu({ alarmPopUpState, showSearchBox, setAlarmPopUpState }) {
 	return (
 		<aside>
 			<ul className='navAsideMenu'>
@@ -22,10 +24,17 @@ function NavAsideMenu({ showSearchBox }) {
 					</button>
 				</li>
 				<li className='iconBtn'>
-					<button>
+					<button
+						className={`alarmBtn ${alarmPopUpState && 'activeBg'}`}
+						onClick={() =>
+							setAlarmPopUpState(
+								(alarmPopUpState) => !alarmPopUpState,
+							)
+						}
+					>
 						<VscBell className='alarmIcon' />
 					</button>
-					<AlarmPopUp />
+					{alarmPopUpState && <AlarmPopUp />}
 				</li>
 				<li className='profileBox'>
 					<button

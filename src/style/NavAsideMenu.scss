@@ -32,11 +32,13 @@
     }
 
     .iconButton {
+      position: relative;
+      top: 2px;
       width: 19px;
       height: 19px;
     }
 
-    &:nth-child(1),&:nth-child(2),&:last-child {
+    &.iconBtn {
       @extend .iconButtonBox;
 
       button {
@@ -48,6 +50,24 @@
       .alarmIcon, .menuIcon {
         @extend .iconButton;
         margin-right: 5px;
+      }
+      .alarmBtn.activeBg {
+        position: relative;
+        color: #ffffff;
+
+        &::after{
+          content: "";
+          display: inline-block;
+          position: absolute;
+          left: 19px;
+          top: calc(50% + 1px);
+          transform: translate(-50%, -50%);
+          width: 32px;
+          height: 32px;
+          border-radius: 50%;
+          background: #3366ff;
+          z-index: -1;
+        }
       }
     }
   }

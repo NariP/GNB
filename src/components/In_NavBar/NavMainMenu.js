@@ -5,9 +5,10 @@ import '../../style/NavMainMenu.scss';
 NavMainMenu.propTypes = {
 	showDropDownMenu: PropTypes.func, // () => void
 	hideDropDownMenu: PropTypes.func, // () => void
+	hideAlarmPopUp: PropTypes.func, // () => void
 };
 
-function NavMainMenu({ showDropDownMenu, hideDropDownMenu }) {
+function NavMainMenu({ showDropDownMenu, hideDropDownMenu, hideAlarmPopUp }) {
 	return (
 		<ul className='mainMenu'>
 			<li>
@@ -15,7 +16,13 @@ function NavMainMenu({ showDropDownMenu, hideDropDownMenu }) {
 					홈
 				</a>
 			</li>
-			<li className='selectedNav' onMouseOver={showDropDownMenu}>
+			<li
+				className='selectedNav'
+				onMouseOver={() => {
+					showDropDownMenu();
+					hideAlarmPopUp();
+				}}
+			>
 				<a href='/'>탐색</a>
 			</li>
 			<li onMouseOver={hideDropDownMenu}>
